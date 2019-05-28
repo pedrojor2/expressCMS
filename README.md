@@ -3,7 +3,7 @@ expressCMS
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](http://copyfree.org)
 
 <p align="center">
-  <img width="225" height="232.5" src="./images/logo.svg" />
+  <img src="./images/git_logo.svg" />
 </p>
 
 
