@@ -1,0 +1,10 @@
+extends default
+
+block content
+
+  div.managingListOfPosts
+    a.manage-new-post-btn(href='/dashboard_create_post') Create a new Post
+    h1.manage-posts-title Delete or Update a Post:
+    each post in posts
+      a.manage-posts-post-div(href=`/admin_manage_post/${post.ID}`)
+        h3 #{post.Title}

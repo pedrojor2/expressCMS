@@ -1,0 +1,17 @@
+extends default
+
+block content
+
+  div.listOfPosts
+    each post in posts
+      a.postInList(href=`/posts/${post.ID}`)
+        h3 #{post.Title}
+        h4 #{post.Subtitle}
+        h5 #{post.Date}
+  div.buttonList
+    if page_number > 1
+      a.nostyle.next-btn(href=`/page/${page_number-1}`)
+        h3 Previous Page
+    if post_count > posts_per_page*(page_number)
+      a.nostyle.next-btn(href=`/page/${page_number+1}`)
+        h3 Next Page

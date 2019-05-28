@@ -1,0 +1,7 @@
+{
+  "site_name": "my site",
+  "site_password": "default",
+  "posts_per_page": 4,
+  "btn_one_name": "about",
+  "btn_one_link": "https://www.google.com"
+}

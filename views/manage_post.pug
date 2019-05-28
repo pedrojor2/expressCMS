@@ -1,0 +1,47 @@
+extends default
+
+block content
+  form(method='POST' action='/admin_update_post')
+    input(type="hidden" name="ID" value=postID)
+    div.postFrame.new-post-topDiv
+      h1.new-post-header Update or delete post #{postID}: "#{Title}"
+      div.new-post-form-group
+        label(for='title').new-post-label Title:&nbsp;
+        br
+        input.new-post-input(type='text', placeholder='Title of post here.' name='title', value=Title)
+
+      div.new-post-form-group
+        label(for='subtitle').new-post-label Subtitle:&nbsp;
+        br
+        input.new-post-input(type='text', placeholder='Subtitle of post here.' name='subtitle', value=Subtitle)
+
+      div.new-post-form-group
+        label(for='date').new-post-label Date:&nbsp;
+        br
+        input.new-post-input(autocomplete="off", type='text', placeholder='Date of post here.' name='date', value=Date)
+
+
+      div.new-post-form-group
+        input.new-post-input(type='username', placeholder='fk' name='username',style="visibility: hidden; width:0;height:0;")
+
+        label(for='password').new-post-label Password:&nbsp;
+        br
+        input.new-post-input(type='password', placeholder='You already know' name='password')
+
+      br
+
+      div.new-post-form-body
+        label(for='body').new-post-label Body:&nbsp;
+        br
+        textarea.new-post-text-area(name='body', placeholder='Your body here.')
+          | #{Body}
+
+      div.new-post-btn-div
+        button.new-post-btn(type='submit') Update
+
+  form(method='POST' action='/admin_delete_post')
+    div.delete-post-div
+      label(for='password').new-post-label Password:&nbsp;
+      input.new-post-input(type='password', placeholder='For Post deletion' name='password')
+      input(type="hidden" name="ID" value=postID)
+      button.delete-post-btn(type='submit') Delete

@@ -1,0 +1,466 @@
+/* ==========================================================================
+   #STYLES
+   ========================================================================== */
+
+/* RESET
+   ========================================================================== */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /* [1] */
+  margin: 0;
+  padding: 0;
+}
+
+/* FONTS
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html,
+body {
+  font-family: "Helvetica Neue", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  color: black;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Anchor
+   ========================================================================== */
+
+a.nostyle:link {
+  text-decoration: inherit;
+  cursor: pointer;
+}
+
+a.nostyle:visited {
+  text-decoration: inherit;
+  cursor: auto;
+}
+a.headerAnchor {
+  color: white;
+}
+a.headerAnchor:hover {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Header
+   ========================================================================== */
+
+.header {
+  width: 100%;
+  display: flex;
+
+  justify-content: space-between;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  align-items: center;
+  height: 64px;
+  background-color: #e59866;
+  color: #ffffff;
+  line-height: 35px;
+  top: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 50;
+}
+
+.headerText {
+  font-weight: 400;
+}
+.headerTextLeft {
+  font-size: 27.5px;
+}
+
+.headerTextRight {
+  font-size: 20px;
+}
+
+/* Posts Container
+   ========================================================================== */
+
+.listOfPosts {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 2.5vh;
+  height: 80vh;
+
+  overflow: auto;
+}
+.postInList {
+  margin: auto;
+  padding-left: 1vh;
+  padding-right: 1vh;
+  text-align: center;
+
+  text-decoration: inherit;
+  color: black;
+}
+
+.postInList h3 {
+  font-size: 1.55em;
+}
+.postInList h4 {
+  font-size: 1.25em;
+}
+.postInList h5 {
+  font-size: 1.2em;
+}
+
+.postInList:hover {
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.postFrame {
+  padding-top: 3.5vh;
+  padding-bottom: 2.5vh;
+  text-align: center;
+}
+
+.postTitle {
+  font-size: 2em;
+}
+.postSubtitle {
+  font-size: 1.5em;
+}
+.postDate {
+  font-size: 1.35em;
+}
+
+.postBody {
+  padding-left: 22.5vw;
+  padding-right: 22.5vw;
+  font-size: 1.2em;
+  padding-bottom: 7.5vh;
+  line-height: 125%;
+}
+
+.postBody ol {
+  padding: 2.5vw;
+  padding-left: 5vw;
+}
+
+.postBody h1 {
+  font-size: 1.65em;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.postBody h2 {
+  font-size: 1.5em;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.postBody h3 {
+  font-size: 1.35em;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.postBody h4 {
+  font-size: 1.15em;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.postBody p {
+  color: black;
+  padding-top: 1.25vh;
+  padding-bottom: 1.25vh;
+}
+.postBody pre {
+  /* table-layout: fixed; */
+  /* width: 100px; */
+}
+.postBody code {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.managingListOfPosts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 2.5vh;
+
+  overflow: auto;
+}
+
+/* Misc
+   ========================================================================== */
+
+.errorText {
+  font-size: 3em;
+  text-align: center;
+  color: #e74c3c;
+  font-weight: 400;
+  padding-bottom: 5vh;
+  padding-top: 5vh;
+}
+
+.errorSubText {
+  font-size: 2em;
+  font-weight: 400;
+  color: #e74c3c;
+  text-align: center;
+}
+/* Buttons
+   ========================================================================== */
+
+.next-btn {
+  text-align: center;
+  color: black;
+}
+.next-btn:visited {
+}
+.next-btn:hover {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* New Post Manager Styling
+   ========================================================================== */
+
+.new-post-header {
+  font-size: 34px;
+}
+
+.new-post-topDiv {
+  text-align: center;
+}
+.new-post-form-group {
+  white-space: pre-line;
+  line-height: 2em;
+  padding-top: 10px;
+
+  margin-bottom: 10px;
+  display: inline-block;
+  text-align: center;
+  width: 300px;
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.new-post-form-body {
+}
+.new-post-label {
+  text-align: right;
+}
+
+.new-post-input {
+  text-align: center;
+  /* height: 200px; */
+}
+
+.new-post-text-area {
+  width: 75vw;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  height: 55vh;
+}
+
+.new-post-btn-div {
+  text-align: center;
+  display: inline-block;
+}
+
+.new-post-btn {
+  font-size: 34px;
+  text-align: center;
+  /* margin: 30px auto; */
+  padding: 0;
+
+  overflow: hidden;
+  /* width: 30%; */
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  position: relative;
+  background-color: #2ecc71;
+  color: #ecf0f1;
+  display: block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.new-post-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Post Manager Styling
+   ========================================================================== */
+
+.manage-posts-post-div {
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  padding-left: 1vh;
+  padding-right: 1vh;
+  text-align: center;
+  font-size: 1.35em;
+  text-decoration: inherit;
+  color: black;
+}
+
+.manage-posts-post-div:hover {
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+.manage-posts-title {
+  font-size: 2em;
+  text-align: center;
+}
+
+.manage-new-post-btn {
+  font-size: 34px;
+  text-align: center;
+  /* margin: 30px auto; */
+  padding: 0;
+  width: auto;
+  padding: 10px;
+  overflow: hidden;
+  margin-bottom: 2vh;
+  text-decoration: none;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  position: relative;
+  background-color: #2ecc71;
+  color: #ecf0f1;
+  display: block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.manage-new-post-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Post Delete Styling
+   ========================================================================== */
+
+.delete-post-btn {
+  font-size: 34px;
+  text-align: center;
+  /* margin: 30px auto; */
+  padding: 0;
+  padding: 10px;
+
+  overflow: hidden;
+  margin-bottom: 2vh;
+  text-decoration: none;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  position: relative;
+  background-color: #e53935;
+  color: #ecf0f1;
+  display: block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.delete-post-btn:hover {
+  background-color: #d32f2f;
+}
+
+.delete-post-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+/* Relative View Styling.
+   ========================================================================== */
+
+/* Screen Width < 250px */
+@media screen and (max-width: 250px) {
+  .headerTextRight {
+    font-size: 12.5px;
+  }
+  .headerTextLeft {
+    font-size: 17.5px;
+  }
+}
+
+/* Screen Width > 900px */
+@media screen and (min-width: 900px) {
+  .postInList h3 {
+    font-size: 1.75em;
+  }
+  .postInList h4 {
+    font-size: 1.5em;
+  }
+  .postInList h5 {
+    font-size: 1.45em;
+  }
+
+  .next-btn {
+    font-size: 1.25em;
+  }
+  .postInListDiv {
+    font-size: 1.5em;
+  }
+
+  .new-post-btn-div {
+    width: 75vw;
+  }
+
+  .new-post-btn {
+    width: 12vw;
+    margin-left: 63vw;
+  }
+}
+
+/* Screen Width < 550px */
+@media screen and (max-width: 550px) {
+  .postTitle {
+    font-size: 1.65em;
+  }
+  .postSubtitle {
+    font-size: 1.3em;
+  }
+  .postDate {
+    font-size: 1.2;
+  }
+  .postBody {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    font-size: 1.1em;
+    line-height: 155%;
+  }
+
+  .new-post-input {
+    padding: 20px;
+  }
+  .delete-post-btn {
+    width: auto;
+  }
+  .delete-post-div {
+    padding-top: 5vh;
+    flex-direction: column;
+  }
+}
+
+/* Screen Height < 560px */
+@media screen and (max-height: 560px) {
+}

@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/css/style.css')
+
+    link(rel='icon', href='favicon.ico', type='image/x-icon')
+    link(rel='shortcut', href='favicon.ico', type='image/x-icon')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+  body
+    main
+      block header
+        header.header
+          a.nostyle.headerAnchor(href=`/`)
+            h1.headerText.headerTextLeft
+              | #{site_name}
+          // Add links and other tabs to the header here.
+          a.nostyle.headerAnchor(href=btn_one_link)
+            h3.headerText.headerTextRight
+              | #{btn_one_name}
+      block content
